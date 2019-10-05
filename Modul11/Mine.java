@@ -18,7 +18,7 @@ public boolean isMineHere(int x, int y) {
 	}
    
    public boolean isMineNear(int x, int y) {
-		if (((Math.abs(mineX -x) == 1)) && ((Math.abs(this.mineY-y) == 1)))
+		if (((Math.abs(mineX -x) == 1)) && ((Math.abs(this.mineY-y) == 1))||((Math.abs(mineX -x) == 1)) && ((Math.abs(this.mineY-y) == 0))||((Math.abs(mineX -x) == 0)) && ((Math.abs(this.mineY-y) == 1)))
 		{
          
 			return true;
