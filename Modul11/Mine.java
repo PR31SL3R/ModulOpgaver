@@ -3,10 +3,8 @@ public class Mine{
 
 Random r = new Random();
 
-int mineX = 2;//r.nextInt(10)+1;
-int mineY = 3;//r.nextInt(10)+1;
-
-
+int mineX = r.nextInt(10)+1;
+int mineY = r.nextInt(10)+1;
 
 public boolean isMineHere(int x, int y) {
 		if ((this.mineX == x) && (this.mineY == y))
@@ -19,9 +17,15 @@ public boolean isMineHere(int x, int y) {
          
 	}
    
+   public boolean isMineNear(int x, int y) {
+		if (((Math.abs(mineX -x) == 1)) && ((Math.abs(this.mineY-y) == 1)))
+		{
+         
+			return true;
+		}
+		else
+			
+         return false;      
+	}
    
-   
-
-
-
 }
