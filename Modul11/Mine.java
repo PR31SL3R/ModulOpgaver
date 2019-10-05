@@ -3,8 +3,8 @@ public class Mine{
 
 Random r = new Random();
 
-int mineX = r.nextInt(10)+1;
-int mineY = r.nextInt(10)+1;
+int mineX = 2;//r.nextInt(10)+1;
+int mineY = 3;//r.nextInt(10)+1;
 
 
 
@@ -18,6 +18,8 @@ public boolean isMineHere(int x, int y) {
          return false;
          
 	}
+   
+   
    
 
 
