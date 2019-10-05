@@ -1,8 +1,10 @@
 import java.util.Random;
 
 public class Mine {
+
 	// Random object r
 	Random r = new Random();
+   
 	// Instance Field
 	int mineX = r.nextInt(10) + 1;
 	int mineY = r.nextInt(10) + 1;

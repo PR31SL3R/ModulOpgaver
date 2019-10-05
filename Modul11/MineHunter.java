@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class MineHunter {
+
 	// Instance Field
 	int x = 1;
 	int y = 1;
@@ -8,6 +9,7 @@ public class MineHunter {
 	Mine[] mines = new Mine[arraySize];
 	int boardSizeX = 10;
 	int boardSizeY = 10;
+   
 	// Scanner object s
 	Scanner s = new Scanner(System.in);
 
