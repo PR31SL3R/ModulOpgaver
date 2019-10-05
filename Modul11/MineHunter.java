@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class MineHunter {
+
 	int x = 1;
 	int y = 1;
 	int arraySize = 10;
@@ -68,8 +69,7 @@ public class MineHunter {
 		if ((x == 10) && (y == 10)) {
 			System.out.println("you won the game");
 			System.out.println("lets make it harder now");
-			arraySize += 5;
-			System.out.print(arraySize);
+			arraySize += 5; 
 			playAgain();
 		}
 	}
@@ -93,7 +93,6 @@ public class MineHunter {
 
 	public static void main(String[] args) {
 
-		System.out.println("Lets learn about indexes");
 		MineHunter test = new MineHunter();
 		test.playGame();
 
