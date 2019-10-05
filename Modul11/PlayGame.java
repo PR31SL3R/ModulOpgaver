@@ -18,59 +18,58 @@ public class PlayGame {
 				this.x = this.x - 1;
 				System.out.println(this.x);
 				System.out.println(this.y);
-         mineChecker();
+         eventChecker();
 
 			}
 			if (temp == 5) {
 				System.out.println("Goodbye");
-				mineChecker();
 				break;
 			}
 			if ((temp == 6) && (this.x < 10)) {
 				this.x = this.x + 1;
 				System.out.println(this.x);
 				System.out.println(this.y);
-				mineChecker();
+				eventChecker();
 			}
 			if ((temp == 8) && (this.y < 10)) {
 				this.y = this.y + 1;
 				System.out.println(this.x);
 				System.out.println(this.y);
-				mineChecker();
+				eventChecker();
 			}
 			if ((temp == 2) && (this.y > 0)) {
 				this.y = this.y - 1;
 				System.out.println(this.x);
 				System.out.println(this.y);
-				mineChecker();
+				eventChecker();
 			}
 			if ((temp == 1) && (this.x >= 1) && (this.y >= 1)) {
 				this.x = this.x - 1;
 				this.y = this.y - 1;
 				System.out.println(this.x);
 				System.out.println(this.y);
-				mineChecker();
+				eventChecker();
 			}
 			if ((temp == 3) && (this.x <= 9) && (this.y >= 1)) {
 				this.x = this.x + 1;
 				this.y = this.y - 1;
 				System.out.println(this.x);
 				System.out.println(this.y);
-				mineChecker();
+				eventChecker();
 			}
 			if ((temp == 7) && (this.x >= 1) && (this.y <= 97)) {
 				this.x = this.x - 1;
 				this.y = this.y + 1;
 				System.out.println(this.x);
 				System.out.println(this.y);
-				mineChecker();
+				eventChecker();
 			}
 			if ((temp == 9) && (this.x <= 9) && (this.y <= 9)) {
 				this.x = this.x + 1;
 				this.y = this.y + 1;
 				System.out.println(this.x);
 				System.out.println(this.y);
-				mineChecker();
+				eventChecker();
 			}
 		}
 		s.close();
@@ -87,7 +86,7 @@ public class PlayGame {
 		}
 	}
    
-   public void mineChecker(){
+   public void eventChecker(){
    for (int j = 0; j < mines.length; j++) {
 
 					//System.out.println(mines[j].mineX + " " + mines[j].mineY);               
@@ -100,6 +99,16 @@ public class PlayGame {
 					if (mines[j].isMineNear(x, y)) {
 						System.out.println("mine is near");
 					}
+               
+               if ((x == 10)&&(y==10)){
+               System.out.println("you won the game");
+               System.out.println("lets make it harder now");
+               arraySize+=5;
+               System.out.println(arraySize);
+               
+               playAgain();
+               }
+               
 				} 
    }
    
