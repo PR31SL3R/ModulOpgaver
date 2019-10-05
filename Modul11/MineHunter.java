@@ -1,16 +1,17 @@
 import java.util.Scanner;
 
 public class MineHunter {
-
+	// Instance Field
 	int x = 1;
 	int y = 1;
 	int arraySize = 10;
 	Mine[] mines = new Mine[arraySize];
 	int boardSizeX = 10;
 	int boardSizeY = 10;
-
+	// Scanner object s
 	Scanner s = new Scanner(System.in);
 
+	// main gameplay method
 	public void playGame() {
 		x = 1;
 		y = 1;
@@ -42,6 +43,7 @@ public class MineHunter {
 		}
 	}
 
+	// Method for placing mines
 	public void minePlacer() {
 
 		for (int i = 0; i < mines.length; i++) {
@@ -50,9 +52,10 @@ public class MineHunter {
 		}
 	}
 
+	// Method for checking mines,won,loss
 	public void eventChecker() {
 		for (int j = 0; j < mines.length; j++) {
-
+			// print mine locations
 			// System.out.println(mines[j].mineX + " " + mines[j].mineY);
 
 			if (mines[j].isMineHere(x, y)) {
@@ -69,11 +72,12 @@ public class MineHunter {
 		if ((x == 10) && (y == 10)) {
 			System.out.println("you won the game");
 			System.out.println("lets make it harder now");
-			arraySize += 5; 
+			arraySize += 5;
 			playAgain();
 		}
 	}
 
+	// play again method
 	public void playAgain() {
 		char input;
 		System.out.println("Do you want to play again?");
