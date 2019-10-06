@@ -5,7 +5,7 @@ public class PlayGame {
 	// Instance Field
 	int x = 1;
 	int y = 1;
-	int arraySize;
+	int arraySize =10;;
 	static int boardSizeX = 10;
 	static int boardSizeY = 10;
 
@@ -20,8 +20,8 @@ public class PlayGame {
 		System.out.println("please enter how large a field");
 		boardSizeX = s.nextInt();
 		boardSizeY = boardSizeX;
-		System.out.println("How many mines would you like");
-		arraySize = s.nextInt();
+		//System.out.println("How many mines would you like");
+		//arraySize = s.nextInt();
 
 		Mine[] mines = new Mine[arraySize];
 		for (int i = 0; i < mines.length; i++) {
