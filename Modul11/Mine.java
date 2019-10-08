@@ -12,7 +12,7 @@ public class Mine {
 	// Avoid mines on start/end spots
 	public Mine() {
 
-		while ((mineX == 1 && mineY == 1) || (mineX == 10 && mineY == 10)) {
+		while ((mineX == 1 && mineY == 1) || (mineX == PlayGame.boardSizeX && mineY == PlayGame.boardSizeY)) {
 
 			mineX = r.nextInt(PlayGame.boardSizeX) + 1;
 			mineY = r.nextInt(PlayGame.boardSizeY) + 1;

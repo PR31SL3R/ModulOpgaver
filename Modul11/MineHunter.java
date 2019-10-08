@@ -6,18 +6,16 @@ public class MineHunter {
 	int x = 1;
 	int y = 1;
 	int arraySize = 10;
-	Mine[] mines = new Mine[arraySize];
-	int boardSizeX = 10;
-	int boardSizeY = 10;
+	Mine[] mines;
+	static int boardSizeX = 10;
+	static int boardSizeY = 10;
    
 	// Scanner object s
 	Scanner s = new Scanner(System.in);
 
 	// main gameplay method
 	public void playGame() {
-		x = 1;
-		y = 1;
-		minePlacer();
+		setGame();
 		System.out.println("you are here " + this.x + " " + this.y);
 		eventChecker();
 		while (true) {
@@ -45,8 +43,39 @@ public class MineHunter {
 		}
 	}
 
-	// Method for placing mines
-	public void minePlacer() {
+	// Method for setting up game
+	public void setGame() {
+   
+   System.out.println("please enter how large a field you would like");
+   
+		boardSizeX = s.nextInt();
+		boardSizeY = boardSizeX;
+      
+      
+      char input;
+		System.out.println("Would you like to custumize number of mines?\n standard number is " + arraySize);
+		do {
+			System.out.println("please enter Y/N ");
+			input = s.next().charAt(0);
+			if (input == 'Y' || (input == 'y')) {
+				System.out.println("please enter number of mines");
+				arraySize = s.nextInt();
+            if (arraySize > ((boardSizeX * boardSizeY)-2))
+            {System.out.println("cannot place more mines than available fields\n Please setup game again");
+            setGame();}
+            break;
+			} else if (input == 'N' || (input == 'n')) {
+				break;
+			}
+		} while ((input != 'y') || (input != 'Y') || (input != 'N') || (input != 'n'));
+      
+      //player start location
+      x = 1;
+      y = 1;
+      
+      
+      //set mines
+      mines = new Mine[arraySize];
 
 		for (int i = 0; i < mines.length; i++) {
 
@@ -58,7 +87,7 @@ public class MineHunter {
 	public void eventChecker() {
 		for (int j = 0; j < mines.length; j++) {
 			// print mine locations
-			// System.out.println(mines[j].mineX + " " + mines[j].mineY);
+			 //System.out.println(mines[j].mineX + " " + mines[j].mineY);
 
 			if (mines[j].isMineHere(x, y)) {
 				System.out.println("you hit a mine");
@@ -71,7 +100,7 @@ public class MineHunter {
 			}
 
 		}
-		if ((x == 10) && (y == 10)) {
+		if ((x == boardSizeX) && (y == boardSizeY)) {
 			System.out.println("you won the game");
 			System.out.println("lets make it harder now");
 			arraySize += 5;
