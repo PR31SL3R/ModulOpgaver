@@ -74,6 +74,9 @@ System.out.println("]");
 //method for win/loss/mineNear
 public void eventChecker(){
 
+//print array - testing
+//printArray();
+
 //print x,y coordiantes
 //System.out.println(playerX +""+playerY);
 

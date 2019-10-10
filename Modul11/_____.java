@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PlayGame {
+public class _____ {
 
 	// Instance Field
 	int x = 1;
