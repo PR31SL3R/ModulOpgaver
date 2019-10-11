@@ -32,8 +32,30 @@ int[] temp3 = a1;
 a1=a2;
 a2=temp3;
 
-System.out.println(Arrays.toString(a1));
-System.out.println(Arrays.toString(a2));
+//System.out.println(Arrays.toString(a1));
+//System.out.println(Arrays.toString(a2));
+
+
+int[] b1 = {12,34,56};
+int[] b2 = {7,8,9,10};
+int[] b3 = {1,2,3,4,5};
+
+int[] b4 = new int[b1.length + b2.length + b3.length];
+for (int i = 0; i<b1.length; i++){
+b4[i] = b1[i]; 
+}
+for (int i = b1.length; i<b2.length+b1.length; i++){
+b4[i] = b2[i-b1.length]; 
+}
+
+for (int i = b1.length+b2.length; i<b2.length+b1.length+b3.length; i++){
+b4[i] = b3[i-(b1.length+b2.length)]; 
+}
+
+
+
+System.out.println(b1.length);
+System.out.println(Arrays.toString(b4));
 
 
 
