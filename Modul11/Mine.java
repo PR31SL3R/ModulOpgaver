@@ -6,16 +6,16 @@ public class Mine {
 	Random r = new Random();
    
 	// Instance Field
-	int mineX = r.nextInt(PlayGame.boardSizeX) + 1;
-	int mineY = r.nextInt(PlayGame.boardSizeY) + 1;
+	int mineX = r.nextInt(MineHunter.boardSizeX) + 1;
+	int mineY = r.nextInt(MineHunter.boardSizeY) + 1;
 
 	// Avoid mines on start/end spots
 	public Mine() {
 
-		while ((mineX == 1 && mineY == 1) || (mineX == PlayGame.boardSizeX && mineY == PlayGame.boardSizeY)) {
+		while ((mineX == 1 && mineY == 1) || (mineX == MineHunter.boardSizeX && mineY == MineHunter.boardSizeY)) {
 
-			mineX = r.nextInt(PlayGame.boardSizeX) + 1;
-			mineY = r.nextInt(PlayGame.boardSizeY) + 1;
+			mineX = r.nextInt(MineHunter.boardSizeX) + 1;
+			mineY = r.nextInt(MineHunter.boardSizeY) + 1;
 
 		}
 

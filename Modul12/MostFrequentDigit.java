@@ -2,49 +2,87 @@ import java.util.Arrays;
 
 public class MostFrequentDigit{
 
-int t =0;
 
-//use int.toString
+int [] tally = new int[10];
+int [] compareTally = new int[11];
+int max =0;
+int maxCompare =0;
+int compare = 0;
 
+public void mostFrequentDigit(int temp){
 
+int temp2 = 0;
 
+int length =  Integer.toString(temp).length();
 
-/*
+for (int i = 0; i < length; i++){
 
-String temp = Integer.toString(guess);
-int[] newGuess = new int[temp.length()];
-for (int i = 0; i < temp.length(); i++)
-{
-    newGuess[i] = temp.charAt(i) - '0';
+temp2 = temp%10;
+
+temp = temp/10;
+
+tally[temp2] +=1;
+
 }
 
-Problem: Write a method mostFrequentDigitthat returns the
-digit value that occurs most frequently in a number.
-•Example: The number 669260267 contains:
-one 0, two 2s, four 6es, one 7, and one 9.
-mostFrequentDigit(669260267)returns 6.
-•If there is a tie -  
-return the digit with the lower value.
-mostFrequentDigit(57135203)returns 3.
-*/
+System.out.println(Arrays.toString(tally));
 
-public int mostFrequentDigit(int temp){
+
+
+}
+
+
+
+
+
+public void mostFrequentDigit2(int temp){
 
 String temp2 = Integer.toString(temp);
 
-int[] tester = new int[temp2.length()];
+int[] sorter = new int[temp2.length()+1];
 
 for (int i = 0; i < temp2.length(); i ++){
 
-System.out.println(temp2.charAt(i));
-
-tester[i]=((int)temp2.charAt(i)- '0');
+sorter[(temp2.charAt(i)- '0')]+=1;
 
 }
 
-System.out.println(Arrays.toString(tester));
-return 1;
+System.out.println(Arrays.toString(sorter));
+
+
+for (int j = 1; j < sorter.length; j++){
+
+if (sorter[j] > max){
+
+this.max = sorter[j];
+//System.out.println(max + " times of the digit " + j);
+}}
+
+for (int k = 1; k < sorter.length; k++){
+
+if (sorter[k] == max){
+
+//Arrays.fill(compareTally, -1);
+compareTally[k]=k;
+
 }
+
+if ((compareTally[k] > -1) && (compareTally[k] > compareTally[k+1])){
+
+compare = compareTally[k];
+
+}
+
+}
+System.out.println(Arrays.toString(compareTally));
+System.out.println(max + " times of the digit " + compare);
+
+}
+
+
+
+
+
 
 public static void main(String[] args){
 
@@ -53,7 +91,9 @@ public static void main(String[] args){
 
 MostFrequentDigit test = new MostFrequentDigit();
 
-test.mostFrequentDigit(123459105);
+//test.mostFrequentDigit(1112224466);
+
+test.mostFrequentDigit2(999344888);
 
 
 
