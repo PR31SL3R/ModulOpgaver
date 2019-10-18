@@ -52,8 +52,6 @@ for (int i = b1.length+b2.length; i<b2.length+b1.length+b3.length; i++){
 b4[i] = b3[i-(b1.length+b2.length)]; 
 }
 
-
-
 System.out.println(b1.length);
 System.out.println(Arrays.toString(b4));
 
