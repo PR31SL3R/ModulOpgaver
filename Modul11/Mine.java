@@ -23,8 +23,7 @@ public class Mine {
 
 	// method for locating mine on same field
 	public boolean isMineHere(int x, int y) {
-		if ((this.mineX == x) && (this.mineY == y)) {
-			return true;
+  			return true;
 		} else
 
 			return false;
@@ -32,15 +31,6 @@ public class Mine {
 	}
 
 	// method for locating mine on same field
-	public boolean isMineNear(int x, int y) {
-		if (((Math.abs(mineX - x) == 1)) && ((Math.abs(this.mineY - y) == 1))
-				|| ((Math.abs(mineX - x) == 1)) && ((Math.abs(this.mineY - y) == 0))
-				|| ((Math.abs(mineX - x) == 0)) && ((Math.abs(this.mineY - y) == 1))) {
-
-			return true;
-		} else
-
-			return false;
-	}
+	  
 
 }
