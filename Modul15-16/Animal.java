@@ -1,13 +1,16 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class Animal{
+abstract class Animal{
 
 Scanner s = new Scanner(System.in);
 Random r = new Random();
 
 int x = r.nextInt(10)+1;
 int y = r.nextInt(10)+1;
+
+int eyesight = 3;
+int attackStrenth;
 
 public void setXY(int x, int y){
 this.x = x;
@@ -47,7 +50,7 @@ while (true) {
             
 
 			}
-			System.out.println("you are here " + this.x + " " + this.y);
+			//System.out.println("you are here " + this.x + " " + this.y);
          break;
 		}
 }
@@ -97,7 +100,20 @@ public boolean isAnimalNear(int x, int y) {
 			return false;
 	}
 
+public void chasePlayer(){
 
+
+}
+
+public int attackPlayer(int health){
+int newHealth = health;
+if (newHealth - attackStrenth >0){
+System.out.println("you survived the attack");
+return newHealth-attackStrenth;
+}
+System.out.println("oh no - you are dead");
+return 0;
+}
 
 
 }
